@@ -1,0 +1,64 @@
+.parallax-container {
+    height: auto;
+  }
+
+  .nav-wrapper{
+    background-color: #06ACBD;
+    
+  }
+
+  .card{
+    color: white;
+    background-color: #06ACBD;
+    text-align: center; 
+  }
+
+
+p {
+  color: black
+}
+
+
+.title{
+  color: white;
+}
+
+#newfoot{
+  margin-top: 120px;
+  background-color: #06ACBD;
+}
+
+h2{
+  text-align: center;
+  color: black;
+  font-family: 'Rubik', sans-serif;
+}
+
+h3{
+  font-family: 'Rubik', sans-serif;
+  color: black;
+  font-size: 20pt;
+}
+
+#nnav{
+  text-align: center
+}
+
+#vin{
+  margin: auto;    
+    display: block;
+}
+
+a{
+  color: white;
+}
+
+#submitButton, #surveybtn{
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  background-color: #06ACBD;
+}
+
+
+
+
