@@ -69,14 +69,14 @@ const loadPage = function(pg) {
       ? poke.results.length
       : startPoke + poke.pokePerPage;
 
-  
+  output.innerHTML = `<h1>Pokemon!<h1>`;
 
 
   for (let i = startPoke; i < endPoke; i++) {
     let Name = poke.results[i].name;
     let capName = Name.charAt(0).toUpperCase() + Name.slice(1);
     let div = document.createElement("div");
-    div.innerHTML = `${capName}<br>`;
+    div.innerHTML = `<h3>${capName}<h3>`;
     output.append(div);
   }
 };
