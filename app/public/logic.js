@@ -20,8 +20,6 @@ const init = function() {
       window.next2 = next; 
       poke.results = data.results;
       console.log(data);
-      console.log(data.next);
-      console.log(poke);
       loadPage(1);
     });
 };
@@ -75,25 +73,16 @@ const loadPage = function(pg) {
     startPoke + poke.pokePerPage > poke.results.length
       ? poke.results.length
       : startPoke + poke.pokePerPage;
-  console.log(totalPages);
-  console.log(startPoke);
 
-  output.innerHTML = `<h1>Page ${poke.currentPage}<h1`;
+  output.innerHTML = `<h1>Pokemon!<h1`;
 
   let pageOutput = document.createElement('div'); 
-  for (let i = 0; i < totalPages; i++) {
-    let span = document.createElement('span');
-    span.textContent = (i+1);
-    span.addEventListener('click', function(){
-      loadPage(i+1);
-    })
-    pageOutput.appendChild(span); 
-  }
 
   for (let i = startPoke; i < endPoke; i++) {
-    console.log(poke.results[i]);
+    let Name = poke.results[i].name;
+    let capName = Name.charAt(0).toUpperCase() + Name.slice(1);
     let div = document.createElement("div");
-    div.innerHTML = `${i} ${poke.results[i].name}<br>`;
+    div.innerHTML = `${capName}<br>`;
     output.appendChild(div);
   }
 
