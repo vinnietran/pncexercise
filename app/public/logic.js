@@ -62,14 +62,14 @@ const getPrev = function() {
 
 const loadPage = function(pg) {
   poke.currentPage = pg;
-  pagination.innerHTML = "";
+  output.innerHTML = "";
   let startPoke = (poke.currentPage - 1) * poke.pokePerPage;
   let endPoke =
     startPoke + poke.pokePerPage > poke.results.length
       ? poke.results.length
       : startPoke + poke.pokePerPage;
 
-  output.innerHTML = `<h1>Pokemon!<h1>`;
+  // output.innerHTML = `<h1>Pokemon!<h1>`;
 
 
   for (let i = startPoke; i < endPoke; i++) {
