@@ -58,26 +58,24 @@ const getPrev = function() {
       console.log(poke);
       loadPage(1);
     });
+    output.innerHTML = "";
 };
 
 const loadPage = function(pg) {
   poke.currentPage = pg;
-  output.innerHTML = "";
+  $("#pokeTable").text("");
   let startPoke = (poke.currentPage - 1) * poke.pokePerPage;
   let endPoke =
     startPoke + poke.pokePerPage > poke.results.length
       ? poke.results.length
       : startPoke + poke.pokePerPage;
 
-  // output.innerHTML = `<h1>Pokemon!<h1>`;
-
-
   for (let i = startPoke; i < endPoke; i++) {
     let Name = poke.results[i].name;
     let capName = Name.charAt(0).toUpperCase() + Name.slice(1);
-    let div = document.createElement("div");
-    div.innerHTML = `<h3>${capName}<h3>`;
-    output.append(div);
+    var newRow = $("<tr>").append($("<td>").text(capName));
+
+    $("#pokeTable").append(newRow);
   }
 };
 

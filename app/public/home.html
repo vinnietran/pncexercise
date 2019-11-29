@@ -7,23 +7,56 @@
       integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt"
       crossorigin="anonymous"
     />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <div>
     <container>
-        <h1>Pokemon!</h1>
+      <h1>Paginated Pokemon!</h1>
       <div class="output"></div>
       <div class="pages"></div>
-      
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="card mb-4" id="current-t">
+            <div class="card-header" id="cardHead">My Pokemon!</div>
+            <div class="card-body">
+              <table class="table table-hover" id="pokeTable">
+                <thead>
+                  <tr>
+                    <th>Pokemon Name</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
       <div class="flex-container">
-        <button type="button" onclick="getPrev()" class="btn btn-secondary" id="prevBtn">
+        <div class="row" id="btns">
+        <button
+          type="button"
+          onclick="getPrev()"
+          class="btn btn-secondary"
+          id="prevBtn"
+        >
           Previous
         </button>
-        <button type="button" onclick="getNext()" class="btn btn-secondary" id="prevBtn">
+        <button
+          type="button"
+          onclick="getNext()"
+          class="btn btn-secondary"
+          id="prevBtn"
+        >
           Next
         </button>
+      </div>
       </div>
     </container>
     <script src="logic.js"></script>
