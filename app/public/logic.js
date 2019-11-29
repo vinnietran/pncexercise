@@ -58,7 +58,7 @@ const getPrev = function() {
       console.log(poke);
       loadPage(1);
     });
-    output.innerHTML = "";
+  output.innerHTML = "";
 };
 
 const loadPage = function(pg) {
@@ -71,11 +71,41 @@ const loadPage = function(pg) {
       : startPoke + poke.pokePerPage;
 
   for (let i = startPoke; i < endPoke; i++) {
-    let Name = poke.results[i].name;
-    let capName = Name.charAt(0).toUpperCase() + Name.slice(1);
-    var newRow = $("<tr>").append($("<td>").text(capName));
+    // pulling out URL to individual pokemon
+    let url = poke.results[i].url;
+    console.log("Here is URL " + url);
+    //using that URL for a new fetch to get the image
+    fetch(url)
+      .then(function(res) {
+        return res.json();
+      })
+      .then(function(data) {
+        const pic = data.sprites.front_default;
+        window.pic2 = pic;
+        console.log(pic);
 
-    $("#pokeTable").append(newRow);
+        var spriteDiv = $("<div>");
+        spriteDiv.addClass("sprite");
+
+        var img = $("<img />");
+        img.addClass("sprite");
+        img.attr("src", pic2);
+
+        spriteDiv.append(img);
+
+
+        //creating a new row for each poke
+        var newRow = $("<tr>").append(
+          $("<td>").text(capName),
+          $("<td>").append(spriteDiv)
+        );
+        //adding new row to the table
+        $("#pokeTable").append(newRow);
+      });
+    //getting the name of each poke
+    let Name = poke.results[i].name;
+    //converting string to caps
+    let capName = Name.charAt(0).toUpperCase() + Name.slice(1);
   }
 };
 
