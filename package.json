@@ -1,17 +1,18 @@
 {
   "name": "pncexercise",
   "version": "1.0.0",
-  "description": "",
+  "description": "This application uses Node.js along with the PokeAPI.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vinnietran/pncexercise.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "vincenzo tranquillo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vinnietran/pncexercise/issues"
@@ -23,5 +24,6 @@
     "express": "^4.17.1",
     "nodemon": "^1.19.4",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {}
 }
