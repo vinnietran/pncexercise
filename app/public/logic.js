@@ -93,7 +93,6 @@ const loadPage = function(pg) {
 
         spriteDiv.append(img);
 
-
         //creating a new row for each poke
         var newRow = $("<tr>").append(
           $("<td>").text(capName),
